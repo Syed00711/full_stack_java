@@ -26,7 +26,7 @@ public void check() {
 	public  void number() {
 		System.out.println("this");
 		TestSuper ts =new TestSuper();
-		ts.check4(this);
+		
 	}
 
 }
