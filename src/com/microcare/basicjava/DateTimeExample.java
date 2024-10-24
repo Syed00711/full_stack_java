@@ -5,8 +5,11 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 public class DateTimeExample {
 
@@ -40,7 +43,8 @@ public class DateTimeExample {
 	
 	LocalDate dateval=LocalDate.parse(date);
 
-	
+	List<Integer> ll=new ArrayList<>();
+	List<Integer> l2=new LinkedList<>();
 	System.out.println(past.getDayOfWeek());
 	
 	System.out.println("=====================LocalDateTime=============");
