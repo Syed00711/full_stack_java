@@ -3,6 +3,7 @@ package com.microcare.datastructure;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,48 +33,48 @@ public class ArrayListExample {
 	
 		
 		l1.addAll(l2);
-	System.out.println(l1);
+	//System.out.println(l1);
 	l2.add(99);
-	System.out.println(l1.containsAll(l2));
+	//System.out.println(l1.containsAll(l2));
 	
-	System.out.println(l2);
+	//System.out.println(l2);
 	l2.remove(99);
-	System.out.println(l2);
+	//System.out.println(l2);
 	
-	System.out.println(l1.removeAll(l2));
-	System.out.println(l1);
-	System.out.println(l1.size());
+	//System.out.println(l1.removeAll(l2));
+	//System.out.println(l1);
+	//System.out.println(l1.size());
 	
-	System.out.println(l1.get(2));
+	//System.out.println(l1.get(2));
 	l1.add(10);
 	l1.set(0, 11);
-	System.out.println(l1);
+	//System.out.println(l1);
 	l1.addAll(2, l2);
-	System.out.println(l1);
+	//System.out.println(l1);
 	l1.add(2,99);
-	System.out.println(l1);
+	//System.out.println(l1);
 	
 	//l1.clear();
 	l1.add(99);
-	System.out.println(l1);
-	System.out.println(l1.indexOf(99));
+	//System.out.println(l1);
+	//System.out.println(l1.indexOf(99));
 	
-	System.out.println(l1.lastIndexOf(99));
-	System.out.println(l1.size()==0);
-	System.out.println(l1.isEmpty());
+	//System.out.println(l1.lastIndexOf(99));
+	//System.out.println(l1.size()==0);
+	//System.out.println(l1.isEmpty());
 	List<Integer> l6=l1.subList(2, 5);
-	System.out.println(l6);
+	//System.out.println(l6);
 	
 	Integer[] i= l1.toArray(new Integer[0]);
-	System.out.println(i[2]);
+	//System.out.println(i[2]);
 	
     List<Integer> l7 =Arrays.asList(1,2,3,4,5);
     
-    System.out.println(l7);
+   // System.out.println(l7);
     List<Integer>l8 =l7.stream().
  		   map(e -> e*e).
  		   collect(Collectors.toList());
-   System.out.println(l8);
+   //System.out.println(l8);
    
    
    /* l7.forEach(e -> {
@@ -88,6 +89,22 @@ public class ArrayListExample {
     //System.out.println(l7);
     System.out.println(Thread.currentThread().getName());
    LinkedList<Integer> ll=new LinkedList<>();
+   
+  
+   
+   
+   Iterator<String> t1=l5.iterator();
+   
+   while(t1.hasNext()) {
+	   System.out.println(t1.next());
+   }
+   
+   l1.add(null);
+   System.out.println(l1);
+   int[] nums= {5,8,12,3,9,55,1};
+   Arrays.sort(nums);
+   System.out.println(Arrays.toString(nums));
+   
 	}
 
 }
