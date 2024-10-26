@@ -4,29 +4,39 @@ public class ThreadExample extends Thread{
 	public ThreadExample(String name){
 		super(name);
 	}
+	static Check check;
 	public static void main(String[] args) throws InterruptedException {
-		System.out.println(Thread.currentThread().getName());
+
 		ThreadExample t1 =new ThreadExample("T1");
 		ThreadExample t2 =new ThreadExample("T2");
-		System.out.println("start execution t1");
-		 System.out.println(t1.getState());
+		check=new Check();
+
 		t1.start();
-         
-			
-		
-        
-         System.out.println("start execution t2");
+
          t2.start();
 	}
 	
 	public  void run() {
-		System.out.println("start"+Thread.currentThread().getName());
-		
-			for(int i=0;i<99999999;i++) {
-				
-			}
-		
-		System.out.println("end");
-	}
+synchronized(check) {
+			 check.display(Thread.currentThread());
+}
 
+		
+	}
+	
+	
+
+}
+
+
+class Check{
+	public synchronized void display(Thread thread) {
+		System.out.println("running"+thread.getName());
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
